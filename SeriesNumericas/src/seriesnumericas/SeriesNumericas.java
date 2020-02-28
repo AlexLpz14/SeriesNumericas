@@ -6,7 +6,7 @@ public class SeriesNumericas {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
-        boolean repeat = false, r=false;
+        boolean repeat = false, r=false, rr=false;
         int opcion; //Guardaremos la opcion del usuario
         double limite = 0;
         while (!salir) {
@@ -21,12 +21,16 @@ public class SeriesNumericas {
                         while(!repeat){
                             do{
                                 try{
-                                    limite = sc.nextDouble();
-                                    if(limite <=0){
-                                        System.out.println("Cantidades mayor a 0");
-                                        sc.next();
-                                    }
-                                    r=true;
+                                    
+                                    do{
+                                        limite = sc.nextDouble();
+                                        if(limite <=0){
+                                            System.out.println("Cantidades mayor a 0");
+                                            //sc.next();
+                                        }else{
+                                            r=true;
+                                        }
+                                    }while(!r);
                                 }catch(InputMismatchException ime){
                                     System.out.println("¡Cuidado! Solo puedes insertar números menores o iguales a 100.");
                                     sc.next();
@@ -41,6 +45,7 @@ public class SeriesNumericas {
                             }
 
                         }
+                        System.out.println("--Fibonacci--");
                         Fibonacci(limite);
                         repeat=false;
                         break;
@@ -49,12 +54,15 @@ public class SeriesNumericas {
                         while(!repeat){
                             do{
                                 try{
-                                    limite = sc.nextDouble();
-                                    if(limite <=0){
-                                        System.out.println("Cantidades mayor a 0");
-                                        sc.next();
-                                    }
-                                    r=true;
+                                    do{
+                                        limite = sc.nextDouble();
+                                        if(limite <=0){
+                                            System.out.println("Cantidades mayor a 0");
+                                            //sc.next();
+                                        }else{
+                                            r=true;
+                                        }
+                                    }while(!r);
                                 }catch(InputMismatchException ime){
                                     System.out.println("¡Cuidado! Solo puedes insertar números menores o iguales a 100.");
                                     sc.next();
@@ -69,6 +77,7 @@ public class SeriesNumericas {
                             }
 
                         }
+                        System.out.println("--Padovan--");
                         Padovan(limite);
                         repeat=false;
                         break;
@@ -78,12 +87,15 @@ public class SeriesNumericas {
                     
                             do{
                                 try{
-                                    limite = sc.nextDouble();
-                                    if(limite <=0){
-                                        System.out.println("Cantidades mayor a 0");
-                                        sc.next();
-                                    }
-                                    r=true;
+                                    do{
+                                        limite = sc.nextDouble();
+                                        if(limite <=0){
+                                            System.out.println("Cantidades mayor a 0");
+                                            //sc.next();
+                                        }else{
+                                            r=true;
+                                        }
+                                    }while(!r);
                                 }catch(InputMismatchException ime){
                                     System.out.println("¡Cuidado! Solo puedes insertar números menores o iguales a 50.");
                                     sc.next();
@@ -92,11 +104,13 @@ public class SeriesNumericas {
                             r=false; 
                             if(limite>50){
                                 System.out.println("Cantidad menor igual a 50");
+                                //sc.next();
                             }else{
                                 repeat=true;
                             }
 
                         }
+                        System.out.println("--Pascal--");
                         Pascal(limite);
                         repeat=false;
                         break;
